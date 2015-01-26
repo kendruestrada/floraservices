@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1 Sucursal -  #{sucursal.codigo}
+    table 
+      ul
+        li nombre : #{sucursal.nombre}
+        li telefono : #{sucursal.telefono}
+        li pais : #{sucursal.direccion.pais}
+        li ciudad : #{sucursal.direccion.ciudad}
+        li comuna-provincia-sector : #{sucursal.direccion["comuna-provincia-sector"]}
+        li calle : #{sucursal.direccion.calle}
+        li numero : #{sucursal.direccion.numero}
+

@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    h1 Listado de sucursales 
+    table
+      tr
+        th codigo
+        th nombre
+        th telefono
+        th pais
+        th ciudad
+        th comuna-provincia-sector
+        th calle
+        th numero
+      for sucursal in sucursales
+          tr
+            td #{sucursal.codigo}
+            td #{sucursal.nombre}
+            td #{sucursal.telefono}
+            td #{sucursal.direccion.pais}
+            td #{sucursal.direccion.ciudad}
+            td #{sucursal.direccion[comuna-provincia-sector]}
+            td #{sucursal.direccion.calle}
+            td #{sucursal.direccion.numero}
