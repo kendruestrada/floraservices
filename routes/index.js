@@ -30,7 +30,7 @@ router.get('/sucursal', function(req, res) {
     },
 
     json: function(){
-      res.json(sucursales);
+      res.json({data: sucursales});
     }
   });
 });
@@ -61,7 +61,7 @@ router.get('/sucursal/:codigosucursal', function(req, res) {
     },
 
     json: function(){
-      res.json(sucursales);
+      res.json({data: sucursalEncontrada});
     }
   });
 });
@@ -84,17 +84,20 @@ console.log(req.body);
 	noPermitido("Se Intenta ingresar una sucursal existente",res);
 	return;
   }
+  
+  console.log(req.body.data.codigo);
+
   var sucursal = {
-    "codigo": req.body.codigo,
-    "nombre": req.body.nombre,    
+    "codigo": req.body.data.codigo,
+    "nombre": req.body.data.nombre,    
     "direccion": {
-      "pais": req.body.pais,
-      "ciudad": req.body.ciudad,
-      "comuna-provincia-sector": req.body.sector,
-      "calle": req.body.calle,
-      "numero": req.body.numero
+      "pais": req.body.data.pais,
+      "ciudad": req.body.data.ciudad,
+      "comuna-provincia-sector": req.body.data.sector,
+      "calle": req.body.data.calle,
+      "numero": req.body.data.numero,
     },
-    "telefono": req.body.telefono,
+    "telefono": req.body.data.telefono,
   };
   
   sucursales.push(sucursal);
@@ -117,15 +120,15 @@ router.put('/sucursal/:codigosucursal', function(req, res) {
 	res.end();
 	return;	
   }
-  sucAModificar.nombre = req.body.nombre;
+  sucAModificar.nombre = req.body.data.nombre;
 
-  sucAModificar.direccion.pais = req.body.pais;
-  sucAModificar.direccion.ciudad = req.body.ciudad;
-  sucAModificar.direccion["comuna-provincia-sector"] = req.body.sector;
-  sucAModificar.direccion.nombre = req.body.nombre;
-  sucAModificar.direccion.calle = req.body.calle;
-  sucAModificar.direccion.numero = req.body.numero;
-  sucAModificar.telefono = req.body.telefono;
+  sucAModificar.direccion.pais = req.body.data.pais;
+  sucAModificar.direccion.ciudad = req.body.data.ciudad;
+  sucAModificar.direccion["comuna-provincia-sector"] = req.body.data.sector;
+  sucAModificar.direccion.nombre = req.body.data.nombre;
+  sucAModificar.direccion.calle = req.body.data.calle;
+  sucAModificar.direccion.numero = req.body.data.numero;
+  sucAModificar.telefono = req.body.data.telefono;
 
 
   res.json({ resultado: 'Ok' });
