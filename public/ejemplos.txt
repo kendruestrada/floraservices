@@ -1,0 +1,22 @@
+﻿http://floraservices.herokuapp.com/images/suc_serena.jpg
+http://floraservices.herokuapp.com/images/suc_valpo.jpg
+http://floraservices.herokuapp.com/images/suc_vina.jpg
+
+Crear:
+curl --data "codigo=01&nombre=Flora - Viña&ciudad=Viña Del Mar&pais=Chile&sector=Centro&telefono=+56 32 2998000 &calle=Arlegui&numero=3564&urlimagen=http://floraservices.herokuapp.com/images/suc_vina.jpg" http://floraservices.herokuapp.com/sucursal/01
+curl --data "codigo=02&nombre=Flora - La Serena&ciudad=La Serena&pais=Chile&sector=Centro&telefono=+56 51 2993400 &calle=Fernado Aguirre&numero=1256&urlimagen=http://floraservices.herokuapp.com/images/suc_serena.jpg" http://floraservices.herokuapp.com/sucursal
+curl --data "codigo=03&nombre=Flora - Valpara%26iacute%3Bso&ciudad=Valpara%26iacute%3Bso&pais=Chile&sector=Centro&telefono=+56 32 2998100 &calle=Almirante Montt&numero=1256&urlimagen=http://floraservices.herokuapp.com/images/suc_valpo.jpg" http://floraservices.herokuapp.com/sucursal
+
+Modificar
+curl -X PUT --data "nombre=Flora - Vi%26ntilde%3Ba&ciudad=Vi%26ntilde%3Ba Del Mar&pais=Chile&sector=Centro&telefono=+56 32 2998000 &calle=Arlegui&numero=3564&urlimagen=http://floraservices.herokuapp.com/images/suc_vina.jpg" http://floraservices.herokuapp.com/sucursal/01
+curl -X PUT --data "nombre=Flora - Valpara%26iacute%3Bso&ciudad=Valpara%26iacute%3Bso&pais=Chile&sector=Centro&telefono=+56 32 2998100 &calle=Almirante Montt&numero=1256&urlimagen=http://floraservices.herokuapp.com/images/suc_valpo.jpg" http://floraservices.herokuapp.com/sucursal/03
+
+Crear
+curl --data "codigo=01&nombre=Salmon Ahumado Artesanal&descripcion=Frescas laminas de salmon ahumado artesanal acompa%26ntilde%3Bado de lechuga,palta,champi%26ntilde%3Bones y berros con un toque de aderezo casero&precio=6400&urlimagen=http://floraservices.herokuapp.com/images/salmon.jpg" http://floraservices.herokuapp.com/platos/plato
+
+
+cerar
+curl --data "codigo=01&nombre=Juan&apellidoPaterno=Gonzalez&apellidoPaterno=Cares&rut=12345678&dv=9&cargo=Camarero&urlimagen=http://floraservices.herokuapp.com/images/juan.jpg" http://floraservices.herokuapp.com/empleados/empleado
+
+modificar
+curl  -X PUT --data "codigo=01&nombre=Juan Carlos&apellidoPaterno=Gonzalez&apellidoPaterno=Cares&rut=12345678&dv=9&cargo=Camarero&urlimagen=http://floraservices.herokuapp.com/images/juan.jpg" http://floraservices.herokuapp.com/empleados/empleado/01

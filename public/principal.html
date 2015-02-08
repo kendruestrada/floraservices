@@ -20,7 +20,7 @@
 
   </head>
 
-  <body>
+  <body itemscope itemtype='http://schema.org/Restaurant'>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -38,9 +38,10 @@
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-      <div class="container">
+      <div class="container" >
         <h1>Bienvenido a Flora</h1>
         <p>Nuestros exquisitos platos te haran pasar un momento increible.</p>
+
       </div>
     </div>
 
@@ -68,6 +69,8 @@
 
       <footer>
         <p>&copy; Flora S.A: 2014</p>
+		<span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><p> Direccion:  <span itemprop="streetAddress">Fernado Aguirre Nro: 1256.</span></p><p><span itemprop="addressLocality">La Serena</span>, Chile.</p></span>
+		<p>Telefono: <span itemprop="telephone" >56 32 2993400</span>.</p>		
       </footer>
     </div> <!-- /container -->
 

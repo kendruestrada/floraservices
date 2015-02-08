@@ -55,7 +55,6 @@ function imgError(image) {
   <script type="text/javascript">
   
   function createThumbnails(data){
-    alert(data);
     listadoEmpleados = data.data;
 
     if(listadoEmpleados != 'undefined'){
@@ -67,7 +66,7 @@ function imgError(image) {
           "<img src='" + listadoEmpleados[i].urlimagen + "' alt='" + listadoEmpleados[i].nombre + "'  onerror='imgError(this);''>" +
           "<div class='caption'>" +
           "<h3>" + listadoEmpleados[i].nombre + " " + listadoEmpleados[i].apellidoPaterno + " " + listadoEmpleados[i].apellidoMaterno + "</h3>" +
-          "<p>Direccion: Cargo " + listadoEmpleados[i].cargo + ".</p>" +
+          "<p>Cargo " + listadoEmpleados[i].cargo + ".</p>" +
           "</div>" +
           "</div>" +
           "</div>";
