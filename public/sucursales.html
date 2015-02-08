@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Pagina de la cadena de restaurantes FLora</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/jumbotron.css" rel="stylesheet">
+<script>
+function imgError(image) {
+    image.onerror = "";
+    image.src = "/images/sin-foto.jpg";
+    return true;
+}
+
+</script>
+
+
+
+  </head>
+
+  <body>
+
+        <div id="examples">
+          <div class="page-header">
+            <h1>Sucursales</h1>
+          </div>
+   <div class="row" id="contenedor_thumbnails">
+    
+    </div>
+
+  
+  
+  
+      <footer>
+        <p>&copy; Flora S.A: 2014</p>
+      </footer>
+    </div> 
+
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  
+<!-- Se puebla el contenedor con las sucursales devueltas por el servicio REST -->  
+  <script type="text/javascript">
+  
+  function createThumbnails(data){
+    alert(data);
+    listadoSucursales = data.data;
+
+    if(listadoSucursales != 'undefined'){
+
+      for(i = 0 ; listadoSucursales.length > i ; i++){
+
+        thumbnail =  "<div class='col-sm-6 col-md-4' itemscope itemtype='http://schema.org/Restaurant'>" +
+          "<div class='thumbnail'>" +
+          "<img src='" + listadoSucursales[i].urlimagen + "' alt='" + listadoSucursales[i].nombre + "'  onerror='imgError(this);''>" +
+          "<div class='caption'>" +
+          "<h3 itemprop='name'>" + listadoSucursales[i].nombre + "</h3>" +
+          "<span itemprop='address' itemscope itemtype='http://schema.org/PostalAddress'>" +
+          "<p> Direccion:  <span itemprop='streetAddress'>" + listadoSucursales[i].direccion.calle + " Nro: " + listadoSucursales[i].direccion.numero + ".</span></p>" +
+          "<p><span itemprop='addressLocality'>" + listadoSucursales[i].direccion.ciudad + "</span>, " + listadoSucursales[i].direccion.pais + ".</p>" +
+          "</span>" +
+          "<p>Telefono: <span itemprop='telephone'" + listadoSucursales[i].telefono + "</span>.</p>" +
+          "</div>" +
+          "</div>" +
+          "</div>";
+          $( "#contenedor_thumbnails").append($.parseHTML( thumbnail ) );
+        }
+
+     
+
+  
+  
+      }  
+  
+  
+  }
+  
+  
+
+  $.getJSON("http://floraservices.herokuapp.com/sucursal",createThumbnails);   
+
+
+
+</script>
+  </body>
+</html>

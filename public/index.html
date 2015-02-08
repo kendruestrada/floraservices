@@ -6,14 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cadena de restaurantes Flora</title>
    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
-    <link href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.css" rel="stylesheet">	
-    <link href="https://cdn.datatables.net/tabletools/2.2.3/css/dataTables.tableTools.css" rel="stylesheet">	
-    <link href="https://editor.datatables.net/media/css/dataTables.editor.min.css" rel="stylesheet">	
+    <link href="css/jquery.dataTables.css" rel="stylesheet">	
 	
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/tabletools/2.2.3/js/dataTables.tableTools.min.js"></script>
-    <script src="js/dataTables.editor.min.js"></script>
+	
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
   </head>
@@ -65,53 +62,7 @@
 	  </div>
     </div><!-- /.container -->
 <script>
-var editor; // use a global for the submit and return data rendering in the examples
  
-$(document).ready(function() {
-    editor = new $.fn.dataTable.Editor( {
-        ajax: {
-            create: {
-                type: 'POST',
-                url:  'http://localhost:3000/sucursal'
-            },
-            edit: {
-                type: 'PUT',
-                url:  'http://localhost:3000/sucursal/_codigo_'
-            },
-            remove: {
-                type: 'DELETE',
-                url:  'http://localhost:3000/sucursal/_codigo_'
-            }
-        },
-        table: "#example",
-        fields: [ 
-			{
-                label: "codigo",
-                name: "codigo"
-            },{
-                label: "nombre",
-                name: "nombre"
-            }, {
-                label: "telefono",
-                name: "telefono"
-            }, {
-                label: "ciudad",
-                name: "ciudad"
-            }, {
-                label: "pais",
-                name: "pais"
-            }, {
-                label: "comuna-provincia-sector",
-                name: "sector"
-            }, {
-                label: "calle",
-                name: "calle"
-            }, {
-                label: "numero",
-                name: "numero"
-            }
-        ]
-    } );
  
     $('#example').DataTable( {
         dom: "Tfrtip",
@@ -135,7 +86,7 @@ $(document).ready(function() {
             ]
         }*/
     } );
-} );
+
 
 
 

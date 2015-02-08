@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h1 Listado de empleados 
+    table
+      tr
+        th codigo
+        th nombre
+        th apellido Paterno
+        th apellido Materno
+        th rut
+        th cargo
+      for empleado in empleados
+          tr
+            td #{empleado.codigo}
+            td #{empleado.nombre}
+            td #{empleado.apellidoPaterno}
+            td #{empleado.apellidoMaterno}
+            td #{empleado.rut.rut}-#{empleado.rut.dv}
+            td #{empleado.cargo}
+

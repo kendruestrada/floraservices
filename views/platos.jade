@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1 Listado de platos 
+    table
+      tr
+        th codigo
+        th nombre
+        th precio
+        th descripcion
+      for plato in platos
+          tr
+            td #{plato.codigo}
+            td #{plato.nombre}
+            td #{plato.precio}
+            td #{plato.descripcion}
+
